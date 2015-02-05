@@ -13,6 +13,8 @@ if ($_POST) {
         $URL .= "&second_password=$PW2";
     }
 
+    $URL = urlencode($URL);
+
     $addressArray = array();
 
     for ($i = 0; $i < $numAddresses; $i++) {
