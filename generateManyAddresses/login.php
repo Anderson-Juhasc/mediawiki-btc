@@ -2,8 +2,8 @@
 if ($_POST) {
     $numAddresses = 3;
     $ID = $_POST["id"];
-    $PW = $_POST["pw"];
-    $PW2 = $_POST["pw2"];
+    $PW = urlencode($_POST["pw"]);
+    $PW2 = urlencode($_POST["pw2"]);
 
     $URL = "https://blockchain.info/merchant/";
     $URL .= $ID . '/';
@@ -12,8 +12,6 @@ if ($_POST) {
     if (!empty($PW2)) {
         $URL .= "&second_password=$PW2";
     }
-
-    $URL = urlencode($URL);
 
     $addressArray = array();
 
