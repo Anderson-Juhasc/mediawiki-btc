@@ -22,8 +22,16 @@ if ($_POST) {
 <body>
 <?php if ($_POST) : ?>
     <h1>Fazer Doação</h1>
-    <p><?php echo $ADDR; ?></p>
-    <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=L|0&chl=bitcoin:<?php echo $ADDR; ?>" alt="" />
+    <p>
+        <a href="bitcoin:<?php echo $ADDR; ?>">
+            <?php echo $ADDR; ?>
+        </a>
+    </p>
+    <p>
+        <a href="bitcoin:<?php echo $ADDR; ?>">
+            <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=L|0&chl=bitcoin:<?php echo $ADDR; ?>" alt="" />
+        </a>
+    </p>
 
     <div id="countdown"></div>
     <div id="result">Esperando pagamento...</div>
