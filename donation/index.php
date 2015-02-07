@@ -13,8 +13,19 @@ if ($_POST) {
 	<meta charset="UTF-8">
 	<title></title>
     <style type="text/css">
-        label {
-            display:block;
+        .bar {
+            border:1px solid #eee;
+            padding: 1px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            width: 250px;
+        }
+
+        .bar__percent {
+            background: #eee;
+            float: right;
+            height: 12px;
+            width:100%;
         }
     </style>
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -33,6 +44,9 @@ if ($_POST) {
         </a>
     </p>
 
+    <div class="bar">
+        <div id="bar" class="bar__percent"></div>
+    </div>
     <div id="countdown"></div>
     <div id="result">Esperando pagamento...</div>
 
@@ -68,6 +82,7 @@ if ($_POST) {
 
             var timer;
             var end = new Date('<?php echo $ENDTIME; ?>');
+            var barWidth = 100;
 
             function countDown() {
                 var second = 1000;
@@ -76,6 +91,7 @@ if ($_POST) {
                 var day = hour * 24;
                 var now = new Date();
                 var distance = end - now;
+                var percent = 100 / 600;
 
                 if (distance < 0) {
                     clearInterval(timer);
@@ -94,6 +110,9 @@ if ($_POST) {
                 var expire = "Expira em: " + minutes + ':';
                     expire += (seconds < 10 ? '0' : '') + seconds;
 
+                barWidth = barWidth - percent;
+                console.log(barWidth);
+                $('#bar').css("width", barWidth + "%");
                 $('#countdown').text(expire);
             }
 
