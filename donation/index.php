@@ -92,7 +92,7 @@ if ($_POST) {
                 var minute = second * 60;
                 var hour = minute * 60;
                 var day = hour * 24;
-                var now = new Date();
+                now = new Date();
                 var distance = end - now;
 
                 if (distance < 0) {
