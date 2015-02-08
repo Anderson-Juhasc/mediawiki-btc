@@ -83,6 +83,9 @@ if ($_POST) {
             var timer;
             var end = new Date('<?php echo $ENDTIME; ?>');
             var barWidth = 100;
+            var now = new Date();
+            var secondsToEnd = parseInt((end - now) / 1000);
+            var percent = (100 / secondsToEnd);
 
             function countDown() {
                 var second = 1000;
@@ -91,11 +94,11 @@ if ($_POST) {
                 var day = hour * 24;
                 var now = new Date();
                 var distance = end - now;
-                var percent = 100 / 600;
 
                 if (distance < 0) {
                     clearInterval(timer);
                     clearInterval(bal);
+                    $('#bar').css("width", 0 + "%");
                     $('#countdown').text('Expirou!');
                     $('#result').text('');
 
@@ -111,7 +114,6 @@ if ($_POST) {
                     expire += (seconds < 10 ? '0' : '') + seconds;
 
                 barWidth = barWidth - percent;
-                console.log(barWidth);
                 $('#bar').css("width", barWidth + "%");
                 $('#countdown').text(expire);
             }
