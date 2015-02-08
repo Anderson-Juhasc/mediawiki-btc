@@ -83,8 +83,7 @@ if ($_POST) {
             var timer;
             var end = new Date('<?php echo $ENDTIME; ?>');
             var barWidth = 100;
-            var now = new Date();
-            var secondsToEnd = parseInt((end - now) / 1000);
+            var secondsToEnd = parseInt((end - new Date()) / 1000);
             var percent = (100 / secondsToEnd);
 
             function countDown() {
@@ -92,7 +91,7 @@ if ($_POST) {
                 var minute = second * 60;
                 var hour = minute * 60;
                 var day = hour * 24;
-                now = new Date();
+                var now = new Date();
                 var distance = end - now;
 
                 if (distance < 0) {
