@@ -2,6 +2,7 @@
 if ($_POST) {
     // query que conta quantos enderecos ainda existem
     $addressCount = 49;
+    $author = $_POST["btn"];
 }
 ?>
 <!DOCTYPE HTML>
@@ -21,7 +22,7 @@ if ($_POST) {
     <script type="text/javascript">
         $(document).ready(function() {
             if (<?php echo $addressCount; ?> < 50) {
-                var authorID = parseInt($("#btn").data('author'));
+                var authorID = <?php echo $author; ?>;
 
                 $.ajax({
                     type: "POST",
@@ -41,7 +42,7 @@ if ($_POST) {
     <form action="<?php $_SERVER["PHP_SELF"] ?>" method="POST">
         <ul>
             <li>
-                <button name="btn" id="btn" data-author="30" type="submit">Checar</button>
+                <button name="btn" value="30" type="submit">Checar</button>
             </li>
         </ul>
     </form>

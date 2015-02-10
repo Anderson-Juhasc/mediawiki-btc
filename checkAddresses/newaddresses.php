@@ -1,5 +1,7 @@
 <?php
     if ($_POST['author']) {
+        //echo $_POST['author'];
+
         $numAddresses = 3;
 
         // pega os dados do autor no banco
