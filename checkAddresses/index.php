@@ -21,10 +21,12 @@ if ($_POST) {
     <script type="text/javascript">
         $(document).ready(function() {
             if (<?php echo $addressCount; ?> < 50) {
+                var authorID = parseInt($("#btn").data('author'));
+
                 $.ajax({
                     type: "POST",
                     url: "newaddresses.php",
-                    data: { author: 10 },
+                    data: { author: authorID },
                     success: function(response) {
                         if (!response) return;
 
@@ -39,7 +41,7 @@ if ($_POST) {
     <form action="<?php $_SERVER["PHP_SELF"] ?>" method="POST">
         <ul>
             <li>
-                <button name="btn" type="submit">Checar</button>
+                <button name="btn" id="btn" data-author="30" type="submit">Checar</button>
             </li>
         </ul>
     </form>

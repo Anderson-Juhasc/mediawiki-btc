@@ -3,8 +3,8 @@
         $numAddresses = 3;
 
         // pega os dados do autor no banco
-        $ID = "0ea8ba80-5fc1-4a42-8e2a-a024a2fe9fe5";
-        $PW = "firefoxd6ww";
+        $ID = "3ce246ef-91f1-4d64-b1d4-5f2d3ba20f86";
+        $PW = "firefox12345";
         $PW2;
 
         $URL = "https://blockchain.info/merchant/";
