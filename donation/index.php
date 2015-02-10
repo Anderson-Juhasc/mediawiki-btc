@@ -59,7 +59,7 @@ if ($_POST) {
                 $.ajax({
                     type: "GET",
                     url: url + "q/getreceivedbyaddress/<?php echo $ADDR; ?>",
-                    data : {format : 'plain'},
+                    data: {format : 'plain'},
                     success: function(response) {
                         if (!response) return;
 
