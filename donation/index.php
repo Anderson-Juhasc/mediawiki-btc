@@ -58,7 +58,7 @@ if ($_POST) {
             function checkBalance() {
                 $.ajax({
                     type: "GET",
-                    url: url + "q/getreceivedbyaddress/<?php echo $ADDR; ?>",
+                    url: url + "q/getreceivedbyaddress/<?php echo $ADDR; ?>?confirmations=0",
                     data: {format : 'plain'},
                     success: function(response) {
                         if (!response) return;
