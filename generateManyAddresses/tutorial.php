@@ -41,6 +41,10 @@ if ($_POST) {
         ul {
             margin-bottom:0;
         }
+        img {
+            width:700px;
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
