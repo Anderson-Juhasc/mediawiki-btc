@@ -1,7 +1,7 @@
 <?php
 if ($_POST) {
     // selecionar um endereço da row
-    $ADDR = "1NrmXPsi9Lez8Z6xfUkWZ412smRANNN14W";
+    $ADDR = "13Yi35u1KFeNdzjgKv7gAy6auR7qWPxXFx";
     // grava a data da exibicao e a data de expiracao com 10min extra no banco
     $TIME = date("D M d Y H:i:s O");
     $ENDTIME = date("D M d Y H:i:s O", strtotime($TIME) + 600); // add 10min
@@ -68,8 +68,18 @@ if ($_POST) {
                         if (value > 0) {
                             $('#result').text("Recebido!");
                             $('#countdown').text('');
+                            $('#bar').css("width", 0 + "%");
                             clearInterval(timer);
                             clearInterval(bal);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "save-tx.php",
+                                data: {addr : "<?php echo $ADDR; ?>"},
+                                success: function(response) {
+                                    console.log(response);
+                                }
+                            });
                         } else {
                             bal = setTimeout(checkBalance, 5000);
                         }
