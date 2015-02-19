@@ -1,6 +1,6 @@
 # Mediawiki Scripts
 
-Algum scripts usando a API do [blockchain.info](https://blockchain.info/) para uma extensão de Mediawiki.
+Alguns scripts usando a API do [blockchain.info](https://blockchain.info/) para uma extensão de Mediawiki.
 
 ### Créditos
 
