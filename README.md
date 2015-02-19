@@ -4,5 +4,5 @@ Algum scripts usando a API do [blockchain.info](https://blockchain.info/) para u
 
 ### Créditos
 
-- [Rodrigo H. Castilhos](https://github.com/rhcastilhos)
-- [Anderson Juhasc](https://github.com/Anderson-Juhasc)
+- [Rodrigo H. Castilhos](https://github.com/rhcastilhos) (Idealizador)
+- [Anderson Juhasc](https://github.com/Anderson-Juhasc) (Idealizador / Programador)
